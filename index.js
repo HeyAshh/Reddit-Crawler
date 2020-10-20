@@ -7,6 +7,8 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     const page = await browser.newPage();
     await page.goto(url);
     
+    //expand all comments
+    const expandButtons = await page.$$('.morecomments');
     //
 
     await browser.close();
