@@ -5,8 +5,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
 (async function() {
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
-    await page.goto('https://example.com');
-    await page.screenshot({path: 'example.png'});
+    await page.goto(url);
+    
+    //
 
     await browser.close();
 })()
