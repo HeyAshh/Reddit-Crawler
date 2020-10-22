@@ -7,9 +7,13 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     const page = await browser.newPage();
     await page.goto(url);
     
-    //expand all comments
+    //expand all comment threads
     const expandButtons = await page.$$('.morecomments');
-    //
+    console.log(expandButtons.length)
+
+    //select all comments, scrape text and points
+    //sort comments by points
+    //insert into google spreadsheet
 
     await browser.close();
 })()
