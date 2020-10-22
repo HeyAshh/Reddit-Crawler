@@ -10,6 +10,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     //expand all comment threads
     const expandButtons = await page.$$('.morecomments');
     console.log(expandButtons.length)
+    for (let button of expandButtons) {
+        
+    }
 
     //select all comments, scrape text and points
     //sort comments by points
