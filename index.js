@@ -11,7 +11,7 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     const expandButtons = await page.$$('.morecomments');
     console.log(expandButtons.length)
     for (let button of expandButtons) {
-        
+        await button.click();
     }
 
     //select all comments, scrape text and points
