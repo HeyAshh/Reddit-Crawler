@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_recommend_harvards_free_online_2016_cs50/'
+const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_recommend_harvards_free_online_2016_cs50/';
 
 (async function() {
     const browser = await puppeteer.launch({headless: false});
@@ -9,9 +9,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     
     //expand all comment threads
     const expandButtons = await page.$$('.morecomments');
-    console.log(expandButtons.length)
     for (let button of expandButtons) {
         await button.click();
+        await page.waitFor(500);
     }
 
     //select all comments, scrape text and points
