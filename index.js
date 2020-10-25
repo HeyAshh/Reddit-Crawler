@@ -8,11 +8,15 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     await page.goto(url);
     
     //expand all comment threads
-    const expandButtons = await page.$$('.morecomments');
-    for (let button of expandButtons) {
-        await button.click();
-        await page.waitFor(500);
+    let expandButtons = await page.$$('.morecomments');
+    while (expandButtons.length) {
+        for (let button of expandButtons) {
+            await button.click();
+            await page.waitFor(500);
+        }
     }
+    
+
 
     //select all comments, scrape text and points
     //sort comments by points
