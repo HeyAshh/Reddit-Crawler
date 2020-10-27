@@ -14,6 +14,7 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
             await button.click();
             await page.waitFor(500);
         }
+        await page.waitFor(1000);
         expandButtons = await page.$$('.morecomments');
     }
     
