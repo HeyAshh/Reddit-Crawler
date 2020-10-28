@@ -18,9 +18,8 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         expandButtons = await page.$$('.morecomments');
     }
     
-
-
     //select all comments, scrape text and points
+    const comments = await page.$$('.entry');
     //sort comments by points
     //insert into google spreadsheet
 
