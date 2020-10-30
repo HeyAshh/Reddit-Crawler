@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_recommend_harvards_free_online_2016_cs50/';
 
 (async function() {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
     await page.goto(url);
     
@@ -20,12 +20,13 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     
     //select all comments, scrape text and points
     const comments = await page.$$('.entry');
+    const formattedComments = [];
     for (let comment of comments) {
         // scrape points
         const points = await comment.$eval('.score', el => el.textContent).catch(err => console.log('no score'));
-        console.log({points});
         // scrape text
         const text = await comment.$eval('.usertext-body', el => el.textContent).catch(err => console.error('no text'));
+        console.log({points, text});
     }
     //sort comments by points
     //insert into google spreadsheet
