@@ -26,6 +26,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         const points = await comment.$eval('.score', el => el.textContent).catch(err => console.log('no score'));
         // scrape text
         const text = await comment.$eval('.usertext-body', el => el.textContent).catch(err => console.error('no text'));
+        if (points && text) {
+            formattedComments.push({points, text});
+        }
         console.log({points, text});
     }
     //sort comments by points
