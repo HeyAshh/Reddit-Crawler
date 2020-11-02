@@ -30,9 +30,16 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
             const text = rawText.replace(/\n/g, '');
             formattedComments.push({points, text});
         }
-        console.log({formattedComments});
     }
+    console.log({formattedComments});
+    formattedComments.sort((a,b) => {
+        const pointsA = Number(a.points.split(' ')[0])
+        const pointsB = Number(b.points.split(' ')[0])
+        return pointsA - pointsB;
+    })
     //sort comments by points
+
+
     //insert into google spreadsheet
 
     await browser.close();
