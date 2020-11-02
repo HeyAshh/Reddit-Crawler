@@ -25,11 +25,12 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         // scrape points
         const points = await comment.$eval('.score', el => el.textContent).catch(err => console.log('no score'));
         // scrape text
-        const text = await comment.$eval('.usertext-body', el => el.textContent).catch(err => console.error('no text'));
+        const rawText = await comment.$eval('.usertext-body', el => el.textContent).catch(err => console.error('no text'));
         if (points && text) {
+            const text = rawText.replace(/\n/g, '');
             formattedComments.push({points, text});
         }
-        console.log({points, text});
+        console.log({formattedComments});
     }
     //sort comments by points
     //insert into google spreadsheet
