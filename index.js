@@ -31,12 +31,12 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
             formattedComments.push({points, text});
         }
     }
-    console.log({formattedComments});
     formattedComments.sort((a,b) => {
         const pointsA = Number(a.points.split(' ')[0])
         const pointsB = Number(b.points.split(' ')[0])
-        return pointsA - pointsB;
+        return pointsB - pointsA;
     })
+     console.log({formattedComments});
     //sort comments by points
 
 
