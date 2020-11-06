@@ -37,6 +37,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         return pointsB - pointsA;
     })
      console.log(formattedComments.slice(0, 10));
+     formattedComments.sort((a, b) => {
+         
+     }
     //sort comments by points
 
 
