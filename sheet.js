@@ -9,7 +9,7 @@ module.exports = class Sheet {
         await this.doc.loadInfo();
     }
     async addSheet(name){
-        const newSheet = await this.doc.addSheet({ title });
+        await doc.addSheet({ title });
     }
 
     async addRows(rows, i) { 
