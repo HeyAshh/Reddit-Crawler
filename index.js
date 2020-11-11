@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const Sheet = require('./sheet');
 
 const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_recommend_harvards_free_online_2016_cs50/';
 
@@ -39,7 +40,7 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         const pointsA = Number(a.points.split(' ')[0])
         const pointsB = Number(b.points.split(' ')[0])
         return pointsB - pointsA;
-     }
+     })
      
      console.log(formattedComments.slice(0, 10));
   
