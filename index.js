@@ -8,6 +8,7 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     const page = await browser.newPage();
     await page.goto(url);
     
+    const sheet = new Sheet();
     //create sheet with title
     const title = page.#eval('.title a', el => el.textContent);
     
