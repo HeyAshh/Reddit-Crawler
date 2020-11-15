@@ -7,7 +7,6 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
     await page.goto(url);
-    
     const sheet = new Sheet();
     await sheet.load();
     //create sheet with title
@@ -44,12 +43,9 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
         const pointsB = Number(b.points.split(' ')[0])
         return pointsB - pointsA;
      })
-     
-     console.log(formattedComments.slice(0, 10));
-  
-
-
+     console.log(formattedComments.length);
     //insert into google spreadsheet
-
-    await browser.close();
+    sheet.addRows(formattedComments, sheetIndex);
+  
+    //await browser.close();
 })()
