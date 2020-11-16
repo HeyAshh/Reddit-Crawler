@@ -47,5 +47,5 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     //insert into google spreadsheet
     sheet.addRows(formattedComments, sheetIndex);
   
-    //await browser.close();
+    await browser.close();
 })()
