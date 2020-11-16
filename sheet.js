@@ -9,7 +9,7 @@ module.exports = class Sheet {
         await this.doc.loadInfo();
     }
     async addSheet(name){
-        await doc.addSheet({ title });
+        await this.doc.addSheet({ title });
         return this.doc.sheetsByIndex.length - 1;
     }
 
