@@ -11,7 +11,7 @@ const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_
     await sheet.load();
     //create sheet with title
     const title = await page.$eval('.title a', el => el.textContent);
-    const sheetIndex = await sheet.addSheet(title);
+    const sheetIndex = await sheet.addSheet(title.slice(0, 99));
     
     //expand all comment threads
     let expandButtons = await page.$$('.morecomments');
