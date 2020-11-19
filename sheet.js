@@ -8,8 +8,8 @@ module.exports = class Sheet {
         await this.doc.useServiceAccountAuth(require('./credentials.json'));
         await this.doc.loadInfo();
     }
-    async addSheet(name){
-        await this.doc.addSheet({ title });
+    async addSheet(title, headerValues){
+        await this.doc.addSheet({ title, headerValues });
         return this.doc.sheetsByIndex.length - 1;
     }
 
