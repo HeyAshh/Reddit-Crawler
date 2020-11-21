@@ -4,7 +4,7 @@ const Sheet = require('./sheet');
 const url = 'https://old.reddit.com/r/learnprogramming/comments/4q6tae/i_highly_recommend_harvards_free_online_2016_cs50/';
 
 (async function() {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
     const sheet = new Sheet();
